@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Slider con Glide.js</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.theme.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .slide {
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            border-radius: 8px;
+            margin: 5px;
+            /* Pequeño margen para ver la separación */
+        }
+
+        /* Estilos específicos para las diapositivas de ejemplo */
+        .slide-1 {
+            background-color: #3498db;
+        }
+
+        .slide-2 {
+            background-color: #e74c3c;
+        }
+
+        .slide-3 {
+            background-color: #2ecc71;
+        }
+
+        .slide-4 {
+            background-color: #f39c12;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide">
+                    <div class="slide slide-1"><img src="img/fadhil-abhimantra-YkRryuFB1-o-unsplash.jpg" alt=""></div>
+                </li>
+                <li class="glide__slide">
+                    <div class="slide slide-2"><img src="img/kotagauni-srinivas-xdZASg5djeA-unsplash.jpg" alt=""></div>
+                </li>
+                <li class="glide__slide">
+                    <div class="slide slide-3"><img src="img/martin-baron-vPINjzoA070-unsplash.jpg" alt=""></div>
+                </li>
+                <li class="glide__slide">
+                    <div class="slide slide-4"><img src="img/michael-mckay-TOt2mhwcePg-unsplash.jpg" alt=""></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">Anterior</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">Siguiente</button>
+        </div>
+
+        <div class="glide__bullets" data-glide-el="controls">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+            <button class="glide__bullet" data-glide-dir="=3"></button>
+        </div>
+    </div>
+    <h1>Testeo de la web</h1>
+    <h3>esta es una práctica para comprobar la performance y accesiblidad de la página</h3>
+    <p>"La accesibilidad web es fundamental para garantizar que personas con discapacidad puedan percibir, comprender,
+        navegar
+        e interactuar con la web. Esto no solo beneficia a una parte de la población, sino que mejora la experiencia de
+        usuario
+        para todos, incluyendo a quienes utilizan dispositivos móviles, tienen conexiones lentas o se encuentran en
+        entornos con
+        mucha luz. Asegurar el contraste de colores, la estructura lógica del contenido y el soporte para la navegación
+        por
+        teclado son pilares esenciales para cumplir con los estándares WCAG."</p>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
+
+    <script>
+        // Seleccionamos el contenedor principal con la clase 'glide'
+        new Glide('.glide', {
+            // Opciones de configuración (aquí solo usamos unas pocas)
+            type: 'carousel', // 'carousel' permite desplazamiento infinito
+            perView: 1,      // Muestra 1 diapositiva a la vez
+            autoplay: 3000   // Hace que avance automáticamente cada 3 segundos
+        }).mount(); // Iniciamos el slider
+    </script>
+
+</body>
+
+</html>
